@@ -2,7 +2,7 @@
 Imports System.IO
 Imports System.Collections
 Public Class Form1
-    Sub Application()
+    Sub Work()
 
         Dim arguments As String() = Environment.GetCommandLineArgs
         Dim haveToMove = False
@@ -39,14 +39,18 @@ Public Class Form1
 
                         fileWriter.Write("Deleted," & path & "\" & item.Name & "," & item.CreationTime & "," & DateTime.Now & Environment.NewLine)
                     Else
+
+                        If (My.Computer.FileSystem.FileExists(pathToMove & "\" & item.Name)) Then
+                            My.Computer.FileSystem.DeleteFile(pathToMove & "\" & item.Name)
+                        End If
                         item.MoveTo(pathToMove & "\" & item.Name)
-                        TextBox1.AppendText("Moved," & path & "\" & item.Name & "," & pathToMove & "\" & item.Name & "," & Environment.NewLine)
-                        fileWriter.Write("Moved," & path & "\" & item.Name & "," & pathToMove & "\" & item.Name & "," & item.CreationTime & "," & DateTime.Now & Environment.NewLine)
+                            TextBox1.AppendText("Moved," & path & "\" & item.Name & "," & pathToMove & "\" & item.Name & "," & Environment.NewLine)
+                            fileWriter.Write("Moved," & path & "\" & item.Name & "," & pathToMove & "\" & item.Name & "," & item.CreationTime & "," & DateTime.Now & Environment.NewLine)
+                        End If
                     End If
-                End If
             End If
         Next
         fileWriter.Close()
-        Me.Close()
+        Application.Exit()
     End Sub
 End Class

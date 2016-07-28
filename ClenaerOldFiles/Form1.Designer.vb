@@ -20,11 +20,11 @@ Partial Class Form1
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
-        Me.Application()
+
         Me.WindowState = FormWindowState.Minimized
 
         '
@@ -50,7 +50,9 @@ Partial Class Form1
         Me.Text = "Form1"
         Me.ResumeLayout(False)
         Me.PerformLayout()
-
+    End Sub
+    Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Me.Work()
     End Sub
 
     Friend WithEvents TextBox1 As TextBox
