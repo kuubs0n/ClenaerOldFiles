@@ -24,7 +24,8 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
-        Me.Application(2)
+        Me.Application()
+        Me.WindowState = FormWindowState.Minimized
 
         '
         'TextBox1
