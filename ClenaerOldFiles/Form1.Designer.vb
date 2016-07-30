@@ -51,7 +51,7 @@ Partial Class Form1
         Me.ResumeLayout(False)
         Me.PerformLayout()
     End Sub
-    Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Public Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Me.Work()
     End Sub
 
