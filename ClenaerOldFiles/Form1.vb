@@ -30,7 +30,7 @@ Public Class Form1
             For Each item2 In fileList
                 Dim minutes As Integer = TimeSpan.FromTicks(item2.CreationTime.Ticks).TotalMinutes
 
-                If (item2.Extension.Equals(".pdf") Or item2.Extension.Equals(".jpg") Or item2.Extension.Equals(".JPG") Or item2.Extension.Equals(".JPEG") Or item2.Extension.Equals(".PDF")) Then
+                If (item2.Extension.Equals(".pdf") Or item2.Extension.Equals(".jpeg") Or item2.Extension.Equals(".jpg") Or item2.Extension.Equals(".JPG") Or item2.Extension.Equals(".JPEG") Or item2.Extension.Equals(".PDF")) Then
 
                     TextBox1.AppendText("Name: " & item2.Name & " Creation Time: " & minutes & Environment.NewLine)
                     TextBox1.AppendText("Checking: " & currentMinutesTicks & " " & minutes & " " & timeToDelete & Environment.NewLine)
